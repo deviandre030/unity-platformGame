@@ -19,7 +19,8 @@ public class PlayerManager : MonoBehaviour
     public bool grounded;
     public LayerMask GroundMask;
     public BoxCollider2D groundCheck;
-    private void Awake()
+    public SpriteRenderer character;
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -44,6 +45,14 @@ public class PlayerManager : MonoBehaviour
         if(Mathf.Abs(xInput) > 0)
         {
             rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
+            if(xInput > 0)
+            {
+                character.flipX = false;
+            }
+            if(xInput < 0)
+            {
+                character.flipX = true;
+            }
         }
         if(Input.GetKey("space") && grounded)
         {
