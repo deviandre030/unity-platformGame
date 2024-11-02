@@ -11,6 +11,7 @@ public class lvl1 : MonoBehaviour
     {
         if(collision.gameObject.name == "lvl1")
         {
+            
             rb.transform.position = new Vector3(-170f, 35f, 0);
         }
     }
