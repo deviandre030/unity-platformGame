@@ -602,6 +602,7 @@ MonoBehaviour:
     m_Bits: 128
   groundCheck: {fileID: 828101115}
   character: {fileID: 474415235}
+  plusJumpForce: 3
 --- !u!114 &386239887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a951f378244c4478d7ea3d21e7f40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 386239882}
 --- !u!1 &474415233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2476,7 @@ GameObject:
   - component: {fileID: 1968847595}
   - component: {fileID: 1968847597}
   - component: {fileID: 1968847596}
+  - component: {fileID: 1968847598}
   m_Layer: 0
   m_Name: lvl1
   m_TagString: Untagged
@@ -2555,6 +2556,19 @@ Halo:
     serializedVersion: 2
     rgba: 4291624704
   m_Size: 0.55
+--- !u!114 &1968847598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968847593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60d3aa708599e498e2b8668a400b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameScene: second scene
 --- !u!1 &2025996897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4731159832744639189, guid: 3e05242feee0b38448b28644aaf47ebd, type: 3}

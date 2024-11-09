@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public LayerMask GroundMask;
     public BoxCollider2D groundCheck;
     public SpriteRenderer character;
+    public float plusJumpForce;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,7 +55,16 @@ public class PlayerManager : MonoBehaviour
                 character.flipX = true;
             }
         }
-        if(Input.GetKey("space") && grounded)
+        if(Input.GetKey("space"))
+        {
+            jumpForce += plusJumpForce * Time.deltaTime;
+        }
+            else
+            {
+                
+            }
+
+        if(Input.GetKeyUp("space") && grounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

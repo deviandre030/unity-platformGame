@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class loadLevelScript : MonoBehaviour
 {
+    public static loadLevelScript nextScene;
+    
     public Animator transition;
     public float transitionTime = 1f;
 
@@ -12,8 +14,8 @@ public class loadLevelScript : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
+        if(Input.GetKeyUp("n"))
+        {            
             LoadNextLevel();
         }
     }
