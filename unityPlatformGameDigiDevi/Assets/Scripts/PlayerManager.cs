@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour
     {
         getInput();
         move();
+        jump();
         
     }
     void FixedUpdate()
@@ -43,8 +44,9 @@ public class PlayerManager : MonoBehaviour
     }
     void move()
     {
-        if(Mathf.Abs(xInput) > 0)
+        if(Mathf.Abs(xInput) > 0 )
         {
+            
             rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
             if(xInput > 0)
             {
@@ -55,23 +57,29 @@ public class PlayerManager : MonoBehaviour
                 character.flipX = true;
             }
         }
-        if(Input.GetKey("space"))
+        
+    }
+    void checkGround()
+    {
+        grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, GroundMask).Length > 0;
+    }
+    void jump()
+    {
+        if(Input.GetKey("space") && jumpForce <= 15f )
         {
             jumpForce += plusJumpForce * Time.deltaTime;
-        }
-            else
-            {
-                
-            }
+            moveSpeed = 0f;
+        }else moveSpeed = 10f;
+            
 
         if(Input.GetKeyUp("space") && grounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-    }
-    void checkGround()
-    {
-        grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, GroundMask).Length > 0;
+        if(!grounded)
+        {
+            jumpForce = 8f;
+        }
     }
     
 }

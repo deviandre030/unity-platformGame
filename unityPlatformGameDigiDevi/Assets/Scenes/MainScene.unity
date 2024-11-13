@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 10
-  jumpForce: 11
+  jumpForce: 8
   xInput: 0
   yInput: 0
   grounded: 0
@@ -2641,6 +2641,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1416439470552446659, guid: 3e05242feee0b38448b28644aaf47ebd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493926966897742282, guid: 3e05242feee0b38448b28644aaf47ebd, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775436426651498295, guid: 3e05242feee0b38448b28644aaf47ebd, type: 3}
